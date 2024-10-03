@@ -1,0 +1,21 @@
+<h1>New Log</h1>
+<%= form_with model: @work_log do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @work_log.errors.full_messages_for(:title).each do |message| %>
+      <p style="color: red;"><%= message %></p>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_field :body %>
+    <% @work_log.errors.full_messages_for(:body).each do |message| %>
+      <p style="color: red;"><%= message %></p>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

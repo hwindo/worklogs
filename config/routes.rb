@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root "work_logs#index"
 
-  get "/work_logs", to: "work_logs#index"
-  get "/work_logs/:id", to: "work_logs#show"
+  resources :work_logs
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

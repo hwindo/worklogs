@@ -4,9 +4,12 @@
     <% @work_logs.each do |work_log| %>
       <li>
         <p>
-          <a href="/work_logs/<%= work_log.id %>"><strong><%= work_log.title %></strong><br>
+          <a href="/work_logs/<%= work_log.id %>">
+            <strong><%= work_log.title %></strong>
           </a>
-          <%= work_log.body %><br>
+          <br>
+          <%= work_log.body %>
+          <br>
           <time style="font-size: .8rem"><%= work_log.created_at %></time>
         </p>
       </li>

@@ -4,3 +4,7 @@
 <time>c: <%= @work_log.created_at %></time>
 <p><%= @work_log.body %></p>
 <%= link_to "Edit", edit_work_log_path(@work_log) %>
+<%= link_to "Delete", work_log_path(@work_log), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %>

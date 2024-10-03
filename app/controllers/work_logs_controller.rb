@@ -36,6 +36,13 @@ class WorkLogsController < ApplicationController
     end
   end
 
+  def destroy
+    @work_log = WorkLog.find(params[:id])
+    @work_log.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
     def work_log_params
       params.require(:work_log).permit(:title, :body)

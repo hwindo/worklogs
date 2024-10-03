@@ -1,5 +1,6 @@
 <div>
   <h1>WorkLogs</h1>
+  <%= link_to "New Log", new_work_log_path %>
   <ul>
     <% @work_logs.each do |work_log| %>
       <li>

@@ -21,6 +21,21 @@ class WorkLogsController < ApplicationController
     end
   end
 
+  def edit
+    @title = "Edit Log"
+    @work_log = WorkLog.find(params[:id])
+  end
+
+  def update
+    @work_log = WorkLog.find(params[:id])
+
+    if @work_log.update(work_log_params)
+      redirect_to @work_log
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def work_log_params
       params.require(:work_log).permit(:title, :body)
